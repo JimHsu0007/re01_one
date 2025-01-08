@@ -13,7 +13,7 @@ function getRosePrice() {
     loadingDiv.style.display = "block";
     resultDiv.innerHTML = '';
 
-    fetch('https://cbf6-2407-4d00-1c03-752a-4878-922e-97bf-a371.ngrok-free.app/api/rose-price?date=2025-01-08', {
+    fetch(`https://cbf6-2407-4d00-1c03-752a-4878-922e-97bf-a371.ngrok-free.app/api/rose-price?date=${date}`, {
         headers: {
             'Accept': 'application/json',
             'ngrok-skip-browser-warning': 'true'
