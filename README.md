@@ -1,1 +1,1 @@
-在課餘時間嘗試自己搭網站，有附上後端程式碼，live script用本地接口，上傳可使用ngrok隧道連接電腦當server
+在課餘時間嘗試自己搭網站，有附上後端程式碼，live script用本地接口，上傳可使用ngrok隧道連接電腦當server，資料庫我用本地的mysql
