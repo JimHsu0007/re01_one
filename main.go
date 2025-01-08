@@ -31,6 +31,8 @@ func initDB() error {
 }
 
 func getRosePrice(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, ngrok-skip-browser-warning, Accept")
 	date := r.URL.Query().Get("date")
 	if date == "" {
 		http.Error(w, "Please provide date", http.StatusBadRequest)
@@ -72,7 +74,11 @@ func main() {
 	r.HandleFunc("/api/rose-price", getRosePrice).Methods("GET")
 
 	// 設置 CORS 中介軟體
-	headers := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
+	headers := handlers.AllowedHeaders([]string{"X-Requested-With",
+		"Content-Type",
+		"Authorization",
+		"ngrok-skip-browser-warning",
+		"Accept"})
 	methods := handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "OPTIONS"})
 	origins := handlers.AllowedOrigins([]string{"*"})
 
